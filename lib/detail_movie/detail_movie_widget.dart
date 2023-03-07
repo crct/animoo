@@ -154,7 +154,7 @@ class _DetailMovieWidgetState extends State<DetailMovieWidget>
                                     padding: EdgeInsets.zero,
                                     gridDelegate:
                                         SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 7,
+                                      crossAxisCount: 5,
                                       crossAxisSpacing: 5.0,
                                       mainAxisSpacing: 5.0,
                                       childAspectRatio: 1.0,
