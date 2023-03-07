@@ -1,7 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/details_book/details_book_widget.dart';
-import '/details_car_tesla/details_car_tesla_widget.dart';
-import '/details_station/details_station_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -275,51 +272,38 @@ class _DetailMovieWidgetState extends State<DetailMovieWidget>
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               30.0, 20.0, 30.0, 20.0),
-                          child: InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 300),
-                                  reverseDuration: Duration(milliseconds: 300),
-                                  child: DetailsCarTeslaWidget(),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                width: 40.0,
+                                height: 40.0,
+                                decoration: BoxDecoration(),
+                                child: Icon(
+                                  FFIcons.ksteeringWheel,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  size: 30.0,
                                 ),
-                              );
-                            },
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Container(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  decoration: BoxDecoration(),
-                                  child: Icon(
-                                    FFIcons.ksteeringWheel,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
-                                    size: 30.0,
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'My Vehicle',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFFD9D9D9),
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w300,
+                                        ),
                                   ),
                                 ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        15.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'My Vehicle',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFFD9D9D9),
-                                            fontSize: 20.0,
-                                            fontWeight: FontWeight.w300,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                         Divider(
@@ -330,51 +314,38 @@ class _DetailMovieWidgetState extends State<DetailMovieWidget>
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               30.0, 20.0, 30.0, 20.0),
-                          child: InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 300),
-                                  reverseDuration: Duration(milliseconds: 300),
-                                  child: DetailsBookWidget(),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                width: 40.0,
+                                height: 40.0,
+                                decoration: BoxDecoration(),
+                                child: Icon(
+                                  FFIcons.kcalendar1,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  size: 30.0,
                                 ),
-                              );
-                            },
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Container(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  decoration: BoxDecoration(),
-                                  child: Icon(
-                                    FFIcons.kcalendar1,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
-                                    size: 30.0,
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'My Booking',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFFD9D9D9),
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w300,
+                                        ),
                                   ),
                                 ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        15.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'My Booking',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFFD9D9D9),
-                                            fontSize: 20.0,
-                                            fontWeight: FontWeight.w300,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                         Divider(
@@ -385,51 +356,38 @@ class _DetailMovieWidgetState extends State<DetailMovieWidget>
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               30.0, 20.0, 30.0, 20.0),
-                          child: InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  duration: Duration(milliseconds: 300),
-                                  reverseDuration: Duration(milliseconds: 300),
-                                  child: DetailsStationWidget(),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Container(
+                                width: 40.0,
+                                height: 40.0,
+                                decoration: BoxDecoration(),
+                                child: Icon(
+                                  Icons.offline_bolt_outlined,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  size: 26.0,
                                 ),
-                              );
-                            },
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Container(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  decoration: BoxDecoration(),
-                                  child: Icon(
-                                    Icons.offline_bolt_outlined,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
-                                    size: 26.0,
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      15.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Find Station',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: Color(0xFFD9D9D9),
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w300,
+                                        ),
                                   ),
                                 ),
-                                Expanded(
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        15.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Find Station',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: Color(0xFFD9D9D9),
-                                            fontSize: 20.0,
-                                            fontWeight: FontWeight.w300,
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                         Divider(

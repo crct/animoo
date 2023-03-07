@@ -1,7 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/details_book/details_book_widget.dart';
-import '/details_car_tesla/details_car_tesla_widget.dart';
-import '/details_station/details_station_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';

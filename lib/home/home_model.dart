@@ -1,8 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
 import '/detail_movie/detail_movie_widget.dart';
-import '/details_book/details_book_widget.dart';
-import '/details_car_tesla/details_car_tesla_widget.dart';
-import '/details_station/details_station_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -15,6 +12,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:provider/provider.dart';
 
 class HomeModel extends FlutterFlowModel {
@@ -22,6 +20,8 @@ class HomeModel extends FlutterFlowModel {
 
   // State field(s) for PageView widget.
   PageController? pageViewController;
+  // State field(s) for ListView widget.
+  PagingController<ApiPagingParams, dynamic>? pagingController;
 
   /// Initialization and disposal methods.
 

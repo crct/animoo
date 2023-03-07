@@ -1,8 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
 import '/detail_movie/detail_movie_widget.dart';
-import '/details_book/details_book_widget.dart';
-import '/details_car_tesla/details_car_tesla_widget.dart';
-import '/details_station/details_station_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -15,6 +12,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:provider/provider.dart';
 import 'home_model.dart';
 export 'home_model.dart';
@@ -251,51 +249,37 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(
                           30.0, 20.0, 30.0, 20.0),
-                      child: InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 300),
-                              reverseDuration: Duration(milliseconds: 300),
-                              child: DetailsCarTeslaWidget(),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Container(
+                            width: 40.0,
+                            height: 40.0,
+                            decoration: BoxDecoration(),
+                            child: Icon(
+                              FFIcons.ksteeringWheel,
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                              size: 30.0,
                             ),
-                          );
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Container(
-                              width: 40.0,
-                              height: 40.0,
-                              decoration: BoxDecoration(),
-                              child: Icon(
-                                FFIcons.ksteeringWheel,
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                                size: 30.0,
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  15.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                'My Vehicle',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xFFD9D9D9),
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w300,
+                                    ),
                               ),
                             ),
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'My Vehicle',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFFD9D9D9),
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                     Divider(
@@ -306,51 +290,37 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(
                           30.0, 20.0, 30.0, 20.0),
-                      child: InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 300),
-                              reverseDuration: Duration(milliseconds: 300),
-                              child: DetailsBookWidget(),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Container(
+                            width: 40.0,
+                            height: 40.0,
+                            decoration: BoxDecoration(),
+                            child: Icon(
+                              FFIcons.kcalendar1,
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                              size: 30.0,
                             ),
-                          );
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Container(
-                              width: 40.0,
-                              height: 40.0,
-                              decoration: BoxDecoration(),
-                              child: Icon(
-                                FFIcons.kcalendar1,
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                                size: 30.0,
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  15.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                'My Booking',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xFFD9D9D9),
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w300,
+                                    ),
                               ),
                             ),
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'My Booking',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFFD9D9D9),
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                     Divider(
@@ -361,51 +331,37 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(
                           30.0, 20.0, 30.0, 20.0),
-                      child: InkWell(
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 300),
-                              reverseDuration: Duration(milliseconds: 300),
-                              child: DetailsStationWidget(),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Container(
+                            width: 40.0,
+                            height: 40.0,
+                            decoration: BoxDecoration(),
+                            child: Icon(
+                              Icons.offline_bolt_outlined,
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                              size: 26.0,
                             ),
-                          );
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Container(
-                              width: 40.0,
-                              height: 40.0,
-                              decoration: BoxDecoration(),
-                              child: Icon(
-                                Icons.offline_bolt_outlined,
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                                size: 26.0,
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  15.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                'Find Station',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xFFD9D9D9),
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w300,
+                                    ),
                               ),
                             ),
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'Find Station',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFFD9D9D9),
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                     Divider(
@@ -781,35 +737,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     1.0,
                                                                     0.0,
                                                                     0.0),
-                                                        child: InkWell(
-                                                          onTap: () async {
-                                                            await Navigator
-                                                                .push(
-                                                              context,
-                                                              PageTransition(
-                                                                type:
-                                                                    PageTransitionType
-                                                                        .fade,
-                                                                duration: Duration(
-                                                                    milliseconds:
-                                                                        300),
-                                                                reverseDuration:
-                                                                    Duration(
-                                                                        milliseconds:
-                                                                            300),
-                                                                child:
-                                                                    DetailsStationWidget(),
-                                                              ),
-                                                            );
-                                                          },
-                                                          child: FaIcon(
-                                                            FontAwesomeIcons
-                                                                .play,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                            size: 20.0,
-                                                          ),
+                                                        child: FaIcon(
+                                                          FontAwesomeIcons.play,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          size: 20.0,
                                                         ),
                                                       ),
                                                     ),
@@ -1022,35 +955,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     1.0,
                                                                     0.0,
                                                                     0.0),
-                                                        child: InkWell(
-                                                          onTap: () async {
-                                                            await Navigator
-                                                                .push(
-                                                              context,
-                                                              PageTransition(
-                                                                type:
-                                                                    PageTransitionType
-                                                                        .fade,
-                                                                duration: Duration(
-                                                                    milliseconds:
-                                                                        300),
-                                                                reverseDuration:
-                                                                    Duration(
-                                                                        milliseconds:
-                                                                            300),
-                                                                child:
-                                                                    DetailsStationWidget(),
-                                                              ),
-                                                            );
-                                                          },
-                                                          child: FaIcon(
-                                                            FontAwesomeIcons
-                                                                .play,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                            size: 20.0,
-                                                          ),
+                                                        child: FaIcon(
+                                                          FontAwesomeIcons.play,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          size: 20.0,
                                                         ),
                                                       ),
                                                     ),
@@ -1263,35 +1173,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                     1.0,
                                                                     0.0,
                                                                     0.0),
-                                                        child: InkWell(
-                                                          onTap: () async {
-                                                            await Navigator
-                                                                .push(
-                                                              context,
-                                                              PageTransition(
-                                                                type:
-                                                                    PageTransitionType
-                                                                        .fade,
-                                                                duration: Duration(
-                                                                    milliseconds:
-                                                                        300),
-                                                                reverseDuration:
-                                                                    Duration(
-                                                                        milliseconds:
-                                                                            300),
-                                                                child:
-                                                                    DetailsStationWidget(),
-                                                              ),
-                                                            );
-                                                          },
-                                                          child: FaIcon(
-                                                            FontAwesomeIcons
-                                                                .play,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                            size: 20.0,
-                                                          ),
+                                                        child: FaIcon(
+                                                          FontAwesomeIcons.play,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          size: 20.0,
                                                         ),
                                                       ),
                                                     ),
@@ -1384,28 +1271,73 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               width: MediaQuery.of(context).size.width * 1.0,
                               height: 300.0,
                               decoration: BoxDecoration(),
-                              child: ListView(
+                              child: PagedListView<ApiPagingParams, dynamic>(
+                                pagingController: () {
+                                  if (_model.pagingController != null) {
+                                    return _model.pagingController!;
+                                  }
+
+                                  _model.pagingController = PagingController(
+                                    firstPageKey: ApiPagingParams(
+                                      nextPageNumber: 0,
+                                      numItems: 0,
+                                      lastResponse: null,
+                                    ),
+                                  );
+                                  _model.pagingController!
+                                      .addPageRequestListener((nextPageMarker) {
+                                    RecentAnimeCall.call(
+                                      page: nextPageMarker.nextPageNumber,
+                                      type: 1,
+                                    ).then((listViewRecentAnimeResponse) {
+                                      final pageItems = RecentAnimeCall.results(
+                                        listViewRecentAnimeResponse.jsonBody,
+                                      )!
+                                          .toList() as List;
+                                      final newNumItems =
+                                          nextPageMarker.numItems +
+                                              pageItems.length;
+                                      _model.pagingController!.appendPage(
+                                        pageItems,
+                                        (pageItems.length > 0)
+                                            ? ApiPagingParams(
+                                                nextPageNumber: nextPageMarker
+                                                        .nextPageNumber +
+                                                    1,
+                                                numItems: newNumItems,
+                                                lastResponse:
+                                                    listViewRecentAnimeResponse,
+                                              )
+                                            : null,
+                                      );
+                                    });
+                                  });
+                                  return _model.pagingController!;
+                                }(),
                                 padding: EdgeInsets.zero,
                                 scrollDirection: Axis.horizontal,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 20.0),
-                                    child: InkWell(
-                                      onTap: () async {
-                                        await Navigator.push(
-                                          context,
-                                          PageTransition(
-                                            type:
-                                                PageTransitionType.bottomToTop,
-                                            duration:
-                                                Duration(milliseconds: 300),
-                                            reverseDuration:
-                                                Duration(milliseconds: 300),
-                                            child: DetailsStationWidget(),
-                                          ),
-                                        );
-                                      },
+                                builderDelegate:
+                                    PagedChildBuilderDelegate<dynamic>(
+                                  // Customize what your widget looks like when it's loading the first page.
+                                  firstPageProgressIndicatorBuilder: (_) =>
+                                      Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
+                                      ),
+                                    ),
+                                  ),
+
+                                  itemBuilder: (context, _, recentAnimeIndex) {
+                                    final recentAnimeItem = _model
+                                        .pagingController!
+                                        .itemList![recentAnimeIndex];
+                                    return Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 0.0, 0.0, 20.0),
                                       child: Container(
                                         width: 220.0,
                                         decoration: BoxDecoration(
@@ -1414,46 +1346,80 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         ),
                                         child: Stack(
                                           children: [
-                                            ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                              child: Image.asset(
-                                                'assets/images/slider-movie-2.png',
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    1.0,
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    1.0,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                            Container(
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  1.0,
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  1.0,
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    Color(0x00161616),
-                                                    Color(0xF3161616),
-                                                    Color(0xF3161616)
-                                                  ],
-                                                  stops: [0.0, 0.6, 1.0],
-                                                  begin: AlignmentDirectional(
-                                                      0.0, -1.0),
-                                                  end: AlignmentDirectional(
-                                                      0, 1.0),
-                                                ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 5.0, 5.0, 5.0),
+                                              child: ClipRRect(
                                                 borderRadius:
                                                     BorderRadius.circular(20.0),
+                                                child: Image.network(
+                                                  getJsonField(
+                                                    recentAnimeItem,
+                                                    r'''$.image''',
+                                                  ),
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      1.0,
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      1.0,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(5.0, 5.0, 5.0, 5.0),
+                                              child: InkWell(
+                                                onTap: () async {
+                                                  await Navigator.push(
+                                                    context,
+                                                    PageTransition(
+                                                      type: PageTransitionType
+                                                          .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 300),
+                                                      reverseDuration: Duration(
+                                                          milliseconds: 300),
+                                                      child: DetailMovieWidget(
+                                                        animeId: getJsonField(
+                                                          recentAnimeItem,
+                                                          r'''$.id''',
+                                                        ).toString(),
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                                child: Container(
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      1.0,
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      1.0,
+                                                  decoration: BoxDecoration(
+                                                    gradient: LinearGradient(
+                                                      colors: [
+                                                        Color(0x00161616),
+                                                        Color(0xF3161616),
+                                                        Color(0xF3161616)
+                                                      ],
+                                                      stops: [0.0, 0.6, 1.0],
+                                                      begin:
+                                                          AlignmentDirectional(
+                                                              0.0, -1.0),
+                                                      end: AlignmentDirectional(
+                                                          0, 1.0),
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20.0),
+                                                  ),
+                                                ),
                                               ),
                                             ),
                                             Padding(
@@ -1468,7 +1434,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    'Bungou Stray Dogs 4th Season',
+                                                    valueOrDefault<String>(
+                                                      getJsonField(
+                                                        recentAnimeItem,
+                                                        r'''$.title''',
+                                                      ).toString(),
+                                                      'Title',
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyText1
@@ -1503,7 +1475,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                   .start,
                                                           children: [
                                                             Text(
-                                                              'Episode',
+                                                              'Genre',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyText1
@@ -1522,7 +1494,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                               decoration:
                                                                   BoxDecoration(),
                                                               child: Text(
-                                                                'Eps. 06',
+                                                                getJsonField(
+                                                                  recentAnimeItem,
+                                                                  r'''$.genres''',
+                                                                ).toString(),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                maxLines: 1,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyText1
@@ -1533,63 +1512,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                               context)
                                                                           .primaryColor,
                                                                       fontSize:
-                                                                          14.0,
+                                                                          12.0,
                                                                       fontWeight:
                                                                           FontWeight
-                                                                              .w600,
+                                                                              .w500,
                                                                     ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Text(
-                                                              'Subtitle',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryColor,
-                                                                    fontSize:
-                                                                        12.0,
-                                                                  ),
-                                                            ),
-                                                            Container(
-                                                              height: 25.0,
-                                                              decoration:
-                                                                  BoxDecoration(),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Text(
-                                                                    'SUB',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              14.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w600,
-                                                                        ),
-                                                                  ),
-                                                                ],
                                                               ),
                                                             ),
                                                           ],
@@ -1622,311 +1549,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           1.0,
                                                                           0.0,
                                                                           0.0),
-                                                              child: InkWell(
-                                                                onTap:
-                                                                    () async {
-                                                                  await Navigator
-                                                                      .push(
-                                                                    context,
-                                                                    PageTransition(
-                                                                      type: PageTransitionType
-                                                                          .fade,
-                                                                      duration: Duration(
-                                                                          milliseconds:
-                                                                              300),
-                                                                      reverseDuration:
-                                                                          Duration(
-                                                                              milliseconds: 300),
-                                                                      child:
-                                                                          DetailsStationWidget(),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                                child: FaIcon(
-                                                                  FontAwesomeIcons
-                                                                      .play,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  size: 10.0,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 20.0),
-                                    child: InkWell(
-                                      onTap: () async {
-                                        await Navigator.push(
-                                          context,
-                                          PageTransition(
-                                            type:
-                                                PageTransitionType.bottomToTop,
-                                            duration:
-                                                Duration(milliseconds: 300),
-                                            reverseDuration:
-                                                Duration(milliseconds: 300),
-                                            child: DetailsStationWidget(),
-                                          ),
-                                        );
-                                      },
-                                      child: Container(
-                                        width: 220.0,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(20.0),
-                                        ),
-                                        child: Stack(
-                                          children: [
-                                            ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                              child: Image.asset(
-                                                'assets/images/slider-movie-1.png',
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    1.0,
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    1.0,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                            Container(
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  1.0,
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  1.0,
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    Color(0x00161616),
-                                                    Color(0xF3161616),
-                                                    Color(0xF3161616)
-                                                  ],
-                                                  stops: [0.0, 0.6, 1.0],
-                                                  begin: AlignmentDirectional(
-                                                      0.0, -1.0),
-                                                  end: AlignmentDirectional(
-                                                      0, 1.0),
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(20.0),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      15.0, 15.0, 15.0, 15.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.end,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Bungou Stray Dogs 4th Season',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 16.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          lineHeight: 1.2,
-                                                        ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 10.0,
-                                                                0.0, 0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      children: [
-                                                        Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Text(
-                                                              'Episode',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryColor,
-                                                                    fontSize:
-                                                                        12.0,
-                                                                  ),
-                                                            ),
-                                                            Container(
-                                                              height: 25.0,
-                                                              decoration:
-                                                                  BoxDecoration(),
-                                                              child: Text(
-                                                                'Eps. 06',
-                                                                style: FlutterFlowTheme.of(
+                                                              child: FaIcon(
+                                                                FontAwesomeIcons
+                                                                    .play,
+                                                                color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyText1
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryColor,
-                                                                      fontSize:
-                                                                          14.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Text(
-                                                              'Subtitle',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryColor,
-                                                                    fontSize:
-                                                                        12.0,
-                                                                  ),
-                                                            ),
-                                                            Container(
-                                                              height: 25.0,
-                                                              decoration:
-                                                                  BoxDecoration(),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Text(
-                                                                    'SUB',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              14.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w600,
-                                                                        ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Container(
-                                                          width: 30.0,
-                                                          height: 30.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        40.0),
-                                                            border: Border.all(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryColor,
-                                                              width: 2.0,
-                                                            ),
-                                                          ),
-                                                          child: Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          2.0,
-                                                                          1.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: InkWell(
-                                                                onTap:
-                                                                    () async {
-                                                                  await Navigator
-                                                                      .push(
-                                                                    context,
-                                                                    PageTransition(
-                                                                      type: PageTransitionType
-                                                                          .fade,
-                                                                      duration: Duration(
-                                                                          milliseconds:
-                                                                              300),
-                                                                      reverseDuration:
-                                                                          Duration(
-                                                                              milliseconds: 300),
-                                                                      child:
-                                                                          DetailsStationWidget(),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                                child: FaIcon(
-                                                                  FontAwesomeIcons
-                                                                      .play,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  size: 10.0,
-                                                                ),
+                                                                    .primaryText,
+                                                                size: 10.0,
                                                               ),
                                                             ),
                                                           ),
@@ -1940,286 +1569,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           ],
                                         ),
                                       ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 20.0),
-                                    child: InkWell(
-                                      onTap: () async {
-                                        await Navigator.push(
-                                          context,
-                                          PageTransition(
-                                            type:
-                                                PageTransitionType.bottomToTop,
-                                            duration:
-                                                Duration(milliseconds: 300),
-                                            reverseDuration:
-                                                Duration(milliseconds: 300),
-                                            child: DetailsStationWidget(),
-                                          ),
-                                        );
-                                      },
-                                      child: Container(
-                                        width: 220.0,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(20.0),
-                                        ),
-                                        child: Stack(
-                                          children: [
-                                            ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                              child: Image.asset(
-                                                'assets/images/slider-movie-3.png',
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    1.0,
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    1.0,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                            Container(
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  1.0,
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  1.0,
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    Color(0x00161616),
-                                                    Color(0xF3161616),
-                                                    Color(0xF3161616)
-                                                  ],
-                                                  stops: [0.0, 0.6, 1.0],
-                                                  begin: AlignmentDirectional(
-                                                      0.0, -1.0),
-                                                  end: AlignmentDirectional(
-                                                      0, 1.0),
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(20.0),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      15.0, 15.0, 15.0, 15.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.end,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Bungou Stray Dogs 4th Season',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 16.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          lineHeight: 1.2,
-                                                        ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 10.0,
-                                                                0.0, 0.0),
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      children: [
-                                                        Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Text(
-                                                              'Episode',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryColor,
-                                                                    fontSize:
-                                                                        12.0,
-                                                                  ),
-                                                            ),
-                                                            Container(
-                                                              height: 25.0,
-                                                              decoration:
-                                                                  BoxDecoration(),
-                                                              child: Text(
-                                                                'Eps. 06',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyText1
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryColor,
-                                                                      fontSize:
-                                                                          14.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w600,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            Text(
-                                                              'Subtitle',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryColor,
-                                                                    fontSize:
-                                                                        12.0,
-                                                                  ),
-                                                            ),
-                                                            Container(
-                                                              height: 25.0,
-                                                              decoration:
-                                                                  BoxDecoration(),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Text(
-                                                                    'SUB',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              14.0,
-                                                                          fontWeight:
-                                                                              FontWeight.w600,
-                                                                        ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        Container(
-                                                          width: 30.0,
-                                                          height: 30.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        40.0),
-                                                            border: Border.all(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryColor,
-                                                              width: 2.0,
-                                                            ),
-                                                          ),
-                                                          child: Align(
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0.0, 0.0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          2.0,
-                                                                          1.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: InkWell(
-                                                                onTap:
-                                                                    () async {
-                                                                  await Navigator
-                                                                      .push(
-                                                                    context,
-                                                                    PageTransition(
-                                                                      type: PageTransitionType
-                                                                          .fade,
-                                                                      duration: Duration(
-                                                                          milliseconds:
-                                                                              300),
-                                                                      reverseDuration:
-                                                                          Duration(
-                                                                              milliseconds: 300),
-                                                                      child:
-                                                                          DetailsStationWidget(),
-                                                                    ),
-                                                                  );
-                                                                },
-                                                                child: FaIcon(
-                                                                  FontAwesomeIcons
-                                                                      .play,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  size: 10.0,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                                    );
+                                  },
+                                ),
                               ),
                             ),
                           ],
@@ -2304,211 +1656,208 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 0.0, 20.0),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                await Navigator.push(
-                                                  context,
-                                                  PageTransition(
-                                                    type: PageTransitionType
-                                                        .bottomToTop,
-                                                    duration: Duration(
-                                                        milliseconds: 300),
-                                                    reverseDuration: Duration(
-                                                        milliseconds: 300),
-                                                    child:
-                                                        DetailsStationWidget(),
+                                            child: Container(
+                                              width: 220.0,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(20.0),
+                                              ),
+                                              child: Stack(
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 5.0,
+                                                                5.0, 5.0),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              20.0),
+                                                      child: Image.network(
+                                                        getJsonField(
+                                                          popularAnimeItem,
+                                                          r'''$.image''',
+                                                        ),
+                                                        width: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .width *
+                                                            1.0,
+                                                        height: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .height *
+                                                            1.0,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
                                                   ),
-                                                );
-                                              },
-                                              child: Container(
-                                                width: 220.0,
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          20.0),
-                                                ),
-                                                child: Stack(
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(20.0),
-                                                        child: Image.network(
-                                                          getJsonField(
-                                                            popularAnimeItem,
-                                                            r'''$.image''',
-                                                          ),
-                                                          width: MediaQuery.of(
-                                                                      context)
-                                                                  .size
-                                                                  .width *
-                                                              1.0,
-                                                          height: MediaQuery.of(
-                                                                      context)
-                                                                  .size
-                                                                  .height *
-                                                              1.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0),
-                                                      child: InkWell(
-                                                        onTap: () async {
-                                                          await Navigator.push(
-                                                            context,
-                                                            PageTransition(
-                                                              type:
-                                                                  PageTransitionType
-                                                                      .fade,
-                                                              duration: Duration(
-                                                                  milliseconds:
-                                                                      300),
-                                                              reverseDuration:
-                                                                  Duration(
-                                                                      milliseconds:
-                                                                          300),
-                                                              child:
-                                                                  DetailMovieWidget(
-                                                                animeId:
-                                                                    getJsonField(
-                                                                  popularAnimeItem,
-                                                                  r'''$.id''',
-                                                                ).toString(),
-                                                              ),
-                                                            ),
-                                                          );
-                                                        },
-                                                        child: Container(
-                                                          width: MediaQuery.of(
-                                                                      context)
-                                                                  .size
-                                                                  .width *
-                                                              1.0,
-                                                          height: MediaQuery.of(
-                                                                      context)
-                                                                  .size
-                                                                  .height *
-                                                              1.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            gradient:
-                                                                LinearGradient(
-                                                              colors: [
-                                                                Color(
-                                                                    0x00161616),
-                                                                Color(
-                                                                    0xF3161616),
-                                                                Color(
-                                                                    0xF3161616)
-                                                              ],
-                                                              stops: [
-                                                                0.0,
-                                                                0.6,
-                                                                1.0
-                                                              ],
-                                                              begin:
-                                                                  AlignmentDirectional(
-                                                                      0.0,
-                                                                      -1.0),
-                                                              end:
-                                                                  AlignmentDirectional(
-                                                                      0, 1.0),
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        20.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  15.0,
-                                                                  15.0,
-                                                                  15.0,
-                                                                  15.0),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .end,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              getJsonField(
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(5.0, 5.0,
+                                                                5.0, 5.0),
+                                                    child: InkWell(
+                                                      onTap: () async {
+                                                        await Navigator.push(
+                                                          context,
+                                                          PageTransition(
+                                                            type:
+                                                                PageTransitionType
+                                                                    .fade,
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    300),
+                                                            reverseDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        300),
+                                                            child:
+                                                                DetailMovieWidget(
+                                                              animeId:
+                                                                  getJsonField(
                                                                 popularAnimeItem,
-                                                                r'''$.title''',
+                                                                r'''$.id''',
                                                               ).toString(),
-                                                              'Title',
                                                             ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  lineHeight:
-                                                                      1.2,
-                                                                ),
                                                           ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Genre',
+                                                        );
+                                                      },
+                                                      child: Container(
+                                                        width: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .width *
+                                                            1.0,
+                                                        height: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .height *
+                                                            1.0,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          gradient:
+                                                              LinearGradient(
+                                                            colors: [
+                                                              Color(0x00161616),
+                                                              Color(0xF3161616),
+                                                              Color(0xF3161616)
+                                                            ],
+                                                            stops: [
+                                                              0.0,
+                                                              0.6,
+                                                              1.0
+                                                            ],
+                                                            begin:
+                                                                AlignmentDirectional(
+                                                                    0.0, -1.0),
+                                                            end:
+                                                                AlignmentDirectional(
+                                                                    0, 1.0),
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      20.0),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                15.0,
+                                                                15.0,
+                                                                15.0,
+                                                                15.0),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            getJsonField(
+                                                              popularAnimeItem,
+                                                              r'''$.title''',
+                                                            ).toString(),
+                                                            'Title',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                fontSize: 16.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                lineHeight: 1.2,
+                                                              ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Column(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  Text(
+                                                                    'Genre',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyText1
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Poppins',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryColor,
+                                                                          fontSize:
+                                                                              12.0,
+                                                                        ),
+                                                                  ),
+                                                                  Container(
+                                                                    height:
+                                                                        25.0,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child: Text(
+                                                                      getJsonField(
+                                                                        popularAnimeItem,
+                                                                        r'''$.genres''',
+                                                                      ).toString(),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .start,
+                                                                      maxLines:
+                                                                          1,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyText1
@@ -2516,104 +1865,66 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             fontFamily:
                                                                                 'Poppins',
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).secondaryColor,
+                                                                                FlutterFlowTheme.of(context).primaryColor,
                                                                             fontSize:
                                                                                 12.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
                                                                           ),
                                                                     ),
-                                                                    Container(
-                                                                      height:
-                                                                          25.0,
-                                                                      decoration:
-                                                                          BoxDecoration(),
-                                                                      child:
-                                                                          Text(
-                                                                        getJsonField(
-                                                                          popularAnimeItem,
-                                                                          r'''$.genres''',
-                                                                        ).toString(),
-                                                                        textAlign:
-                                                                            TextAlign.start,
-                                                                        maxLines:
-                                                                            1,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              color: FlutterFlowTheme.of(context).primaryColor,
-                                                                              fontSize: 12.0,
-                                                                              fontWeight: FontWeight.w500,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Container(
-                                                                  width: 30.0,
-                                                                  height: 30.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            40.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryColor,
-                                                                      width:
-                                                                          2.0,
-                                                                    ),
                                                                   ),
-                                                                  child: Align(
-                                                                    alignment:
-                                                                        AlignmentDirectional(
+                                                                ],
+                                                              ),
+                                                              Container(
+                                                                width: 30.0,
+                                                                height: 30.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              40.0),
+                                                                  border: Border
+                                                                      .all(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryColor,
+                                                                    width: 2.0,
+                                                                  ),
+                                                                ),
+                                                                child: Align(
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            2.0,
+                                                                            1.0,
                                                                             0.0,
                                                                             0.0),
                                                                     child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          2.0,
-                                                                          1.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          InkWell(
-                                                                        onTap:
-                                                                            () async {
-                                                                          await Navigator
-                                                                              .push(
-                                                                            context,
-                                                                            PageTransition(
-                                                                              type: PageTransitionType.fade,
-                                                                              duration: Duration(milliseconds: 300),
-                                                                              reverseDuration: Duration(milliseconds: 300),
-                                                                              child: DetailsStationWidget(),
-                                                                            ),
-                                                                          );
-                                                                        },
-                                                                        child:
-                                                                            FaIcon(
-                                                                          FontAwesomeIcons
-                                                                              .play,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryText,
-                                                                          size:
-                                                                              10.0,
-                                                                        ),
-                                                                      ),
+                                                                        FaIcon(
+                                                                      FontAwesomeIcons
+                                                                          .play,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      size:
+                                                                          10.0,
                                                                     ),
                                                                   ),
                                                                 ),
-                                                              ],
-                                                            ),
+                                                              ),
+                                                            ],
                                                           ),
-                                                        ],
-                                                      ),
+                                                        ),
+                                                      ],
                                                     ),
-                                                  ],
-                                                ),
+                                                  ),
+                                                ],
                                               ),
                                             ),
                                           );
@@ -2644,877 +1955,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             style: FlutterFlowTheme.of(context).title2,
                           ),
                         ),
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 1.0,
-                      height: 320.0,
-                      decoration: BoxDecoration(),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 0.0, 20.0, 15.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Recently Added',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 16.0,
-                                      ),
-                                ),
-                                Icon(
-                                  Icons.arrow_forward_outlined,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  size: 20.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 1.0,
-                            height: 300.0,
-                            decoration: BoxDecoration(),
-                            child: ListView(
-                              padding: EdgeInsets.zero,
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 0.0, 20.0),
-                                  child: InkWell(
-                                    onTap: () async {
-                                      await Navigator.push(
-                                        context,
-                                        PageTransition(
-                                          type: PageTransitionType.bottomToTop,
-                                          duration: Duration(milliseconds: 300),
-                                          reverseDuration:
-                                              Duration(milliseconds: 300),
-                                          child: DetailsStationWidget(),
-                                        ),
-                                      );
-                                    },
-                                    child: Container(
-                                      width: 220.0,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(20.0),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            child: Image.asset(
-                                              'assets/images/slider-movie-2.png',
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  1.0,
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  1.0,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Container(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                1.0,
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                1.0,
-                                            decoration: BoxDecoration(
-                                              gradient: LinearGradient(
-                                                colors: [
-                                                  Color(0x00161616),
-                                                  Color(0xF3161616),
-                                                  Color(0xF3161616)
-                                                ],
-                                                stops: [0.0, 0.6, 1.0],
-                                                begin: AlignmentDirectional(
-                                                    0.0, -1.0),
-                                                end: AlignmentDirectional(
-                                                    0, 1.0),
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    15.0, 15.0, 15.0, 15.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Bungou Stray Dogs 4th Season',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 16.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        lineHeight: 1.2,
-                                                      ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 10.0, 0.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            'Episode',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryColor,
-                                                                  fontSize:
-                                                                      12.0,
-                                                                ),
-                                                          ),
-                                                          Container(
-                                                            height: 25.0,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Text(
-                                                              'Eps. 06',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryColor,
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            'Subtitle',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryColor,
-                                                                  fontSize:
-                                                                      12.0,
-                                                                ),
-                                                          ),
-                                                          Container(
-                                                            height: 25.0,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'SUB',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyText1
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontSize:
-                                                                            14.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
-                                                                      ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Container(
-                                                        width: 30.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      40.0),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryColor,
-                                                            width: 2.0,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        2.0,
-                                                                        1.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: InkWell(
-                                                              onTap: () async {
-                                                                await Navigator
-                                                                    .push(
-                                                                  context,
-                                                                  PageTransition(
-                                                                    type: PageTransitionType
-                                                                        .fade,
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            300),
-                                                                    reverseDuration:
-                                                                        Duration(
-                                                                            milliseconds:
-                                                                                300),
-                                                                    child:
-                                                                        DetailsStationWidget(),
-                                                                  ),
-                                                                );
-                                                              },
-                                                              child: FaIcon(
-                                                                FontAwesomeIcons
-                                                                    .play,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                size: 10.0,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 0.0, 20.0),
-                                  child: InkWell(
-                                    onTap: () async {
-                                      await Navigator.push(
-                                        context,
-                                        PageTransition(
-                                          type: PageTransitionType.bottomToTop,
-                                          duration: Duration(milliseconds: 300),
-                                          reverseDuration:
-                                              Duration(milliseconds: 300),
-                                          child: DetailsStationWidget(),
-                                        ),
-                                      );
-                                    },
-                                    child: Container(
-                                      width: 220.0,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(20.0),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            child: Image.asset(
-                                              'assets/images/slider-movie-1.png',
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  1.0,
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  1.0,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Container(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                1.0,
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                1.0,
-                                            decoration: BoxDecoration(
-                                              gradient: LinearGradient(
-                                                colors: [
-                                                  Color(0x00161616),
-                                                  Color(0xF3161616),
-                                                  Color(0xF3161616)
-                                                ],
-                                                stops: [0.0, 0.6, 1.0],
-                                                begin: AlignmentDirectional(
-                                                    0.0, -1.0),
-                                                end: AlignmentDirectional(
-                                                    0, 1.0),
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    15.0, 15.0, 15.0, 15.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Bungou Stray Dogs 4th Season',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 16.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        lineHeight: 1.2,
-                                                      ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 10.0, 0.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            'Episode',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryColor,
-                                                                  fontSize:
-                                                                      12.0,
-                                                                ),
-                                                          ),
-                                                          Container(
-                                                            height: 25.0,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Text(
-                                                              'Eps. 06',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryColor,
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            'Subtitle',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryColor,
-                                                                  fontSize:
-                                                                      12.0,
-                                                                ),
-                                                          ),
-                                                          Container(
-                                                            height: 25.0,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'SUB',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyText1
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontSize:
-                                                                            14.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
-                                                                      ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Container(
-                                                        width: 30.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      40.0),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryColor,
-                                                            width: 2.0,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        2.0,
-                                                                        1.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: InkWell(
-                                                              onTap: () async {
-                                                                await Navigator
-                                                                    .push(
-                                                                  context,
-                                                                  PageTransition(
-                                                                    type: PageTransitionType
-                                                                        .fade,
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            300),
-                                                                    reverseDuration:
-                                                                        Duration(
-                                                                            milliseconds:
-                                                                                300),
-                                                                    child:
-                                                                        DetailsStationWidget(),
-                                                                  ),
-                                                                );
-                                                              },
-                                                              child: FaIcon(
-                                                                FontAwesomeIcons
-                                                                    .play,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                size: 10.0,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20.0, 0.0, 0.0, 20.0),
-                                  child: InkWell(
-                                    onTap: () async {
-                                      await Navigator.push(
-                                        context,
-                                        PageTransition(
-                                          type: PageTransitionType.bottomToTop,
-                                          duration: Duration(milliseconds: 300),
-                                          reverseDuration:
-                                              Duration(milliseconds: 300),
-                                          child: DetailsStationWidget(),
-                                        ),
-                                      );
-                                    },
-                                    child: Container(
-                                      width: 220.0,
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(20.0),
-                                      ),
-                                      child: Stack(
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            child: Image.asset(
-                                              'assets/images/slider-movie-3.png',
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  1.0,
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  1.0,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Container(
-                                            width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                1.0,
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                1.0,
-                                            decoration: BoxDecoration(
-                                              gradient: LinearGradient(
-                                                colors: [
-                                                  Color(0x00161616),
-                                                  Color(0xF3161616),
-                                                  Color(0xF3161616)
-                                                ],
-                                                stops: [0.0, 0.6, 1.0],
-                                                begin: AlignmentDirectional(
-                                                    0.0, -1.0),
-                                                end: AlignmentDirectional(
-                                                    0, 1.0),
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    15.0, 15.0, 15.0, 15.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Bungou Stray Dogs 4th Season',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        fontSize: 16.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        lineHeight: 1.2,
-                                                      ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 10.0, 0.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            'Episode',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryColor,
-                                                                  fontSize:
-                                                                      12.0,
-                                                                ),
-                                                          ),
-                                                          Container(
-                                                            height: 25.0,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Text(
-                                                              'Eps. 06',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyText1
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryColor,
-                                                                    fontSize:
-                                                                        14.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w600,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Text(
-                                                            'Subtitle',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryColor,
-                                                                  fontSize:
-                                                                      12.0,
-                                                                ),
-                                                          ),
-                                                          Container(
-                                                            height: 25.0,
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Text(
-                                                                  'SUB',
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyText1
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        fontSize:
-                                                                            14.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w600,
-                                                                      ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Container(
-                                                        width: 30.0,
-                                                        height: 30.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      40.0),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryColor,
-                                                            width: 2.0,
-                                                          ),
-                                                        ),
-                                                        child: Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0.0, 0.0),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        2.0,
-                                                                        1.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: InkWell(
-                                                              onTap: () async {
-                                                                await Navigator
-                                                                    .push(
-                                                                  context,
-                                                                  PageTransition(
-                                                                    type: PageTransitionType
-                                                                        .fade,
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            300),
-                                                                    reverseDuration:
-                                                                        Duration(
-                                                                            milliseconds:
-                                                                                300),
-                                                                    child:
-                                                                        DetailsStationWidget(),
-                                                                  ),
-                                                                );
-                                                              },
-                                                              child: FaIcon(
-                                                                FontAwesomeIcons
-                                                                    .play,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                size: 10.0,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
                       ),
                     ),
                     Padding(
@@ -3567,23 +2007,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 20.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          width: 30.0,
-                          height: 30.0,
-                          decoration: BoxDecoration(),
-                          child: InkWell(
-                            onTap: () async {
-                              scaffoldKey.currentState!.openDrawer();
-                            },
-                            child: Icon(
-                              FFIcons.kmenu,
-                              color: Color(0xFFB7B7B7),
-                              size: 26.0,
-                            ),
-                          ),
-                        ),
                         Container(
                           height: 25.0,
                           decoration: BoxDecoration(),
@@ -3591,16 +2016,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             'assets/images/logo-animoo.svg',
                             height: 25.0,
                             fit: BoxFit.cover,
-                          ),
-                        ),
-                        Container(
-                          width: 30.0,
-                          height: 30.0,
-                          decoration: BoxDecoration(),
-                          child: Icon(
-                            FFIcons.kbell,
-                            color: Color(0xFFB7B7B7),
-                            size: 24.0,
                           ),
                         ),
                       ],

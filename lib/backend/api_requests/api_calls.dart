@@ -211,6 +211,42 @@ class ServerStreamCall {
       );
 }
 
+class RecentAnimeCall {
+  static Future<ApiCallResponse> call({
+    int? page,
+    int? type,
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Recent Anime',
+      apiUrl: 'https://anime-api.crct.dev/anime/gogoanime/recent-episodes',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'page': page,
+        'type': type,
+      },
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  static dynamic currentPage(dynamic response) => getJsonField(
+        response,
+        r'''$.currentPage''',
+      );
+  static dynamic hasNextPage(dynamic response) => getJsonField(
+        response,
+        r'''$.hasNextPage''',
+      );
+  static dynamic results(dynamic response) => getJsonField(
+        response,
+        r'''$.results''',
+        true,
+      );
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;
