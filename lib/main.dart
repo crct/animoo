@@ -32,6 +32,16 @@ class _MyAppState extends State<MyApp> {
   Locale? _locale;
   ThemeMode _themeMode = ThemeMode.system;
 
+  bool displaySplashImage = true;
+
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(
+        Duration(seconds: 1), () => setState(() => displaySplashImage = false));
+  }
+
   void setLocale(String language) {
     setState(() => _locale = createLocale(language));
   }
@@ -54,7 +64,17 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(brightness: Brightness.light),
       themeMode: _themeMode,
-      home: HomeWidget(),
+      home: displaySplashImage
+          ? Builder(
+              builder: (context) => Container(
+                color: FlutterFlowTheme.of(context).primaryBackground,
+                child: Image.asset(
+                  'assets/images/logo-animoo.svg',
+                  fit: BoxFit.none,
+                ),
+              ),
+            )
+          : HomeWidget(),
     );
   }
 }
